@@ -60,3 +60,15 @@ npm run dev:frontend
 ```
 
 The frontend dev server runs on Vite and calls the backend API at `http://localhost:5000/api`.
+
+## Publish
+
+This repo includes `render.yaml` for publishing as one Render Web Service.
+
+1. Push the repo to GitHub.
+2. Create a MongoDB Atlas cluster and copy its connection string.
+3. In Render, create a new Blueprint from this repository.
+4. Set `MONGO_URI` to the MongoDB Atlas connection string.
+5. Deploy.
+
+Render will run `npm run render-build`, then `npm start`. The Express server serves both `/api/*` and the built React app.
