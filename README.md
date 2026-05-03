@@ -2,73 +2,133 @@
 
 A full-stack team task management web app built with React, Express, MongoDB, and JWT authentication.
 
-## Features
+## 🌐 Live Application
 
-- Signup and secure login
-- Create projects
-- Add and remove project members
-- Project-level Admin and Member roles
-- Create, assign, update, and delete tasks
-- Task status tracking: To Do, In Progress, Done
-- Dashboard with total tasks, status counts, tasks per user, and overdue tasks
-- Production setup where Express serves the React build
+👉 https://team-task-manager-rouge-nine.vercel.app/
 
-## Tech Stack
+---
 
-- Frontend: React, Vite, Axios, React Router
-- Backend: Node.js, Express, MongoDB, Mongoose, JWT, bcryptjs
-- Database: MongoDB
+## 🚀 Features
 
-## Setup
+* Signup and secure login (JWT authentication)
+* Create and manage projects
+* Add and remove project members
+* Role-based access (Admin / Member)
+* Create, assign, update, and delete tasks
+* Task status tracking:
 
-1. Install dependencies:
+  * To Do
+  * In Progress
+  * Done
+* Dashboard with:
+
+  * Total tasks
+  * Tasks by status
+  * Tasks per user
+  * Overdue tasks
+* Secure API with protected routes
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* React (Vite)
+* Axios
+* React Router
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
+
+### Database
+
+* MongoDB Atlas
+
+---
+
+## ⚙️ Setup (Local Development)
+
+### 1. Install dependencies
 
 ```bash
 npm run install:all
 ```
 
-2. Create `backend/.env` from `backend/.env.example`.
+---
 
-3. Start MongoDB locally.
+### 2. Setup environment variables
 
-4. Build the frontend:
-
-```bash
-npm run build
-```
-
-5. Start the web app:
+Create a file:
 
 ```bash
-npm start
+backend/.env
 ```
 
-Open `http://localhost:5000`.
+Add:
 
-## Development
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
 
-Run backend:
+---
+
+### 3. Run the app
 
 ```bash
 npm run dev:backend
-```
-
-Run frontend:
-
-```bash
 npm run dev:frontend
 ```
 
-The frontend dev server runs on Vite and calls the backend API at `http://localhost:5000/api`.
+Frontend runs on Vite, backend on `http://localhost:5000`
 
-## Publish
+---
 
-This repo includes `render.yaml` for publishing as one Render Web Service.
+## 🏗 Production Build
 
-1. Push the repo to GitHub.
-2. Create a MongoDB Atlas cluster and copy its connection string.
-3. In Render, create a new Blueprint from this repository.
-4. Set `MONGO_URI` to the MongoDB Atlas connection string.
-5. Deploy.
+```bash
+npm run build
+npm start
+```
 
-Render will run `npm run render-build`, then `npm start`. The Express server serves both `/api/*` and the built React app.
+Open:
+
+```
+http://localhost:5000
+```
+
+---
+
+## 🌍 Deployment
+
+* Frontend deployed on Vercel
+* Backend deployed on Render
+* Database hosted on MongoDB Atlas
+
+---
+
+## 📌 Notes
+
+* First registered user becomes **Admin**
+* Admin can:
+
+  * Create projects
+  * Add members
+  * Manage tasks
+* Members can:
+
+  * View assigned tasks
+  * Update task status
+
+---
+
+## 👨‍💻 Author
+
+Sunil Kumar
